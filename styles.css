@@ -1,4 +1,4 @@
-/* ---------- Reset & base ---------- */
+/* === Reset & base === */
 * {
   box-sizing: border-box;
 }
@@ -35,7 +35,7 @@ a {
   text-decoration: none;
 }
 
-/* ---------- Theme tokens ---------- */
+/* === Theme tokens === */
 body[data-theme='light'] {
   --color-bg: #fafafa;
   --color-header-bg: #ffffff;
@@ -60,7 +60,7 @@ body[data-theme='dark'] {
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
-/* ---------- Layout helpers ---------- */
+/* === Layout helpers === */
 .container {
   width: 100%;
   max-width: 1400px;
@@ -74,7 +74,7 @@ body[data-theme='dark'] {
   }
 }
 
-/* ---------- Header ---------- */
+/* === Header === */
 .header {
   background-color: var(--color-header-bg);
   box-shadow: var(--shadow);
@@ -109,7 +109,7 @@ body[data-theme='dark'] {
   font-weight: 600;
 }
 
-/* ---------- Main / controls ---------- */
+/* === Main / controls === */
 main {
   padding-top: 48px;
   padding-bottom: 64px;
@@ -207,7 +207,7 @@ main {
   background-color: var(--color-bg);
 }
 
-/* ---------- Card grid ---------- */
+/* === Card grid === */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -267,7 +267,7 @@ main {
   color: var(--color-text-secondary);
 }
 
-/* ---------- Detail view ---------- */
+/* === Detail view === */
 .back-btn {
   display: flex;
   align-items: center;
@@ -310,10 +310,8 @@ main {
 .detail-columns {
   display: flex;
   justify-content: space-between;
-  border: 1px solid red;
   gap: 60px;
   margin-bottom: 40px;
-  /* flex-wrap: wrap; */
 }
 
 @media (max-width: 375px) {
