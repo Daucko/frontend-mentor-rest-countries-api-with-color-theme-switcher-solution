@@ -9,9 +9,25 @@ let currentSearch = '';
 let currentRegion = '';
 
 /* ---------- Theme ---------- */
+function updateThemeIcon(theme) {
+  const icon = document.getElementById('theme-icon');
+  if (!icon) return;
+  if (theme === 'dark') {
+    icon.setAttribute('fill', 'currentColor');
+    icon.setAttribute('stroke', 'none');
+  } else {
+    icon.setAttribute('fill', 'none');
+    icon.setAttribute('stroke', 'currentColor');
+    icon.setAttribute('stroke-width', '1.6');
+    icon.setAttribute('stroke-linecap', 'round');
+    icon.setAttribute('stroke-linejoin', 'round');
+  }
+}
+
 function initTheme() {
   const saved = localStorage.getItem('theme') || 'light';
   document.body.setAttribute('data-theme', saved);
+  updateThemeIcon(saved);
 }
 
 themeToggle.addEventListener('click', () => {
@@ -19,6 +35,7 @@ themeToggle.addEventListener('click', () => {
   const next = current === 'light' ? 'dark' : 'light';
   document.body.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
+  updateThemeIcon(next);
 });
 
 /* ---------- Data ---------- */
@@ -160,7 +177,7 @@ function renderDetail(code) {
 
   app.innerHTML = `
     <button class="back-btn" id="back-btn" type="button">
-      <svg width="18" height="14" viewBox="0 0 18 14"><path d="M1 7h16M1 7l6-6M1 7l6 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <svg width="20" height="12" viewBox="0 0 18 14"><path d="M1 7h16M1 7l6-6M1 7l6 6" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Back
     </button>
     <div class="detail">
